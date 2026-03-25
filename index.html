@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshitha Udugama — IT Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:     #0E1117;
+  --ink2:    #2C3340;
+  --mid:     #5C6675;
+  --muted:   #9AA3B0;
+  --rule:    #E4E8EF;
+  --bg:      #FAFBFC;
+  --white:   #FFFFFF;
+  --accent:  #1D6FA4;
+  --accent2: #14919B;
+  --tag-bg:  #EEF4F9;
+  --tag-txt: #1D6FA4;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--ink2);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,251,252,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 500;
+  color: var(--mid); text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-cta {
+  background: var(--accent); color: #fff !important;
+  padding: 8px 20px; border-radius: 6px;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: #155a85 !important; color: #fff !important; }
+
+/* ── Hero ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 120px 40px 80px;
+  max-width: 1100px; margin: 0 auto;
+  position: relative;
+}
+.hero-inner { max-width: 680px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 1.5px; background: var(--accent);
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700; color: var(--ink);
+  line-height: 1.08; letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+.hero-name em { color: var(--accent); font-style: normal; }
+.hero-desc {
+  font-size: 17px; color: var(--mid);
+  max-width: 540px; line-height: 1.8;
+  margin-bottom: 36px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent); color: #fff;
+  padding: 13px 28px; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; letter-spacing: 0.2px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #155a85; transform: translateY(-1px); }
+.btn-secondary {
+  border: 1.5px solid var(--rule); color: var(--ink2);
+  padding: 13px 28px; border-radius: 8px;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none; letter-spacing: 0.2px;
+  transition: border-color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.hero-stats {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  margin-top: 56px; padding-top: 40px;
+  border-top: 1px solid var(--rule);
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700; color: var(--ink);
+  line-height: 1;
+}
+.hero-stat-label { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+/* ── Section Base ── */
+section { padding: 96px 40px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.section-eyebrow::before {
+  content: ''; display: block;
+  width: 20px; height: 1.5px; background: var(--accent);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700; color: var(--ink);
+  letter-spacing: -0.8px; line-height: 1.15;
+  margin-bottom: 56px;
+}
+
+/* ── About ── */
+#about { background: var(--white); border-top: 1px solid var(--rule); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-text p { font-size: 15.5px; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-info { display: flex; flex-direction: column; gap: 0; }
+.info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-label { color: var(--muted); font-weight: 500; }
+.info-val { color: var(--ink2); font-weight: 500; text-align: right; }
+.info-val a { color: var(--accent); text-decoration: none; }
+.info-val a:hover { text-decoration: underline; }
+
+/* ── Skills ── */
+#skills { background: var(--bg); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.skill-card {
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 24px 26px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.skill-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.skill-card-icon { font-size: 22px; margin-bottom: 12px; }
+.skill-card-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 12px; letter-spacing: 0.2px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  background: var(--tag-bg); color: var(--tag-txt);
+  font-size: 11.5px; font-weight: 500;
+  padding: 4px 10px; border-radius: 4px;
+}
+
+/* ── Experience ── */
+#experience { background: var(--white); border-top: 1px solid var(--rule); }
+.exp-timeline { position: relative; }
+.exp-timeline::before {
+  content: ''; position: absolute;
+  left: 0; top: 8px; bottom: 0;
+  width: 1.5px; background: var(--rule);
+}
+.exp-item {
+  position: relative; padding-left: 36px;
+  margin-bottom: 52px;
+}
+.exp-item:last-child { margin-bottom: 0; }
+.exp-dot {
+  position: absolute; left: -5px; top: 6px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.exp-period {
+  font-size: 11.5px; font-weight: 600; color: var(--accent);
+  letter-spacing: 0.5px; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.exp-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px; font-weight: 600; color: var(--ink);
+  margin-bottom: 3px; line-height: 1.3;
+}
+.exp-company { font-size: 14px; color: var(--mid); font-weight: 500; margin-bottom: 14px; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.exp-bullets li {
+  font-size: 14px; color: var(--mid); line-height: 1.7;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.exp-bullets li::before {
+  content: '–'; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 600;
+}
+
+/* ── Projects ── */
+#projects { background: var(--bg); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.project-card {
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.project-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.project-icon { font-size: 26px; }
+.project-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.3;
+}
+.project-desc { font-size: 13.5px; color: var(--mid); line-height: 1.7; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.project-tag {
+  background: var(--tag-bg); color: var(--tag-txt);
+  font-size: 11px; font-weight: 500;
+  padding: 3px 9px; border-radius: 4px;
+}
+
+/* ── Certifications ── */
+#certifications { background: var(--white); border-top: 1px solid var(--rule); }
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.cert-card {
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 22px 24px; background: var(--bg);
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: box-shadow 0.2s;
+}
+.cert-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.cert-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: var(--tag-bg); display: flex; align-items: center;
+  justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.cert-name { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; line-height: 1.4; }
+.cert-issuer { font-size: 12px; color: var(--muted); }
+.cert-badge {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+  padding: 2px 8px; border-radius: 20px; display: inline-block; margin-top: 5px;
+}
+.cert-badge.active { background: #E6F4EA; color: #1A7A3A; }
+.cert-badge.progress { background: #FFF4E0; color: #B06A00; }
+
+/* ── Contact ── */
+#contact { background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: var(--ink); margin-bottom: 16px;
+}
+.contact-info p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+.contact-links { display: flex; flex-direction: column; gap: 14px; }
+.contact-link {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: var(--ink2); text-decoration: none;
+  font-weight: 500; transition: color 0.2s;
+}
+.contact-link:hover { color: var(--accent); }
+.contact-link-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--tag-bg); display: flex; align-items: center;
+  justify-content: center; font-size: 16px; flex-shrink: 0;
+}
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 12.5px; font-weight: 600; color: var(--ink); letter-spacing: 0.3px; }
+.form-input, .form-textarea {
+  border: 1.5px solid var(--rule); border-radius: 8px;
+  padding: 12px 14px; font-size: 14px; font-family: 'Outfit', sans-serif;
+  color: var(--ink2); background: var(--white);
+  outline: none; transition: border-color 0.2s;
+  resize: none;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-textarea { min-height: 120px; }
+.form-submit {
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 8px;
+  padding: 13px 28px; font-size: 14px; font-weight: 600;
+  font-family: 'Outfit', sans-serif; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+.form-submit:hover { background: #155a85; transform: translateY(-1px); }
+.form-note { font-size: 12px; color: var(--muted); margin-top: -4px; }
+
+/* ── Footer ── */
+footer {
+  background: var(--ink); color: rgba(255,255,255,0.45);
+  padding: 32px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; color: rgba(255,255,255,0.8); font-weight: 700;
+}
+.footer-logo span { color: #5AB4D6; }
+footer p { font-size: 12.5px; }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow { animation: fadeUp 0.6s ease both; }
+.hero-name    { animation: fadeUp 0.6s 0.1s ease both; }
+.hero-desc    { animation: fadeUp 0.6s 0.2s ease both; }
+.hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+.hero-stats   { animation: fadeUp 0.6s 0.4s ease both; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 64px 20px; }
+  #hero { padding: 100px 20px 60px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { gap: 24px; }
+  footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">L<span>.</span>Udugama</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">IT Professional · Sri Lanka</div>
+    <h1 class="hero-name">Lakshitha<br><em>Udugama</em></h1>
+    <p class="hero-desc">
+      System Support Engineer with 3+ years of experience in Linux server administration,
+      ETL pipelines, data warehousing, and infrastructure monitoring. I keep systems
+      reliable, data flowing, and teams unblocked.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get In Touch</a>
+      <a href="#experience" class="btn-secondary">View Experience</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">3+</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label">Companies</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-label">Technologies</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">Support Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-eyebrow">About Me</div>
+    <h2 class="section-title">Passionate about<br>reliable infrastructure</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm an adaptable IT professional based in Gampola, Sri Lanka, with hands-on experience
+          across Application Support, System Support, and Linux server administration.
+        </p>
+        <p>
+          My work spans ETL pipeline management, data warehousing across Greenplum, Snowflake,
+          and ClickHouse, email security administration, and infrastructure monitoring using
+          tools like Zabbix, Nagios, and Datadog.
+        </p>
+        <p>
+          I've worked with international (U.S.-based) clients and cross-functional teams including
+          QA, Business Analysts, and Project Managers — and I thrive in environments where
+          reliability and fast problem-solving matter most.
+        </p>
+      </div>
+      <div class="about-info">
+        <div class="info-row">
+          <span class="info-label">Full Name</span>
+          <span class="info-val">B W D Lakshitha Udugama</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Location</span>
+          <span class="info-val">Maswela, Gampola, Sri Lanka</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Email</span>
+          <span class="info-val"><a href="mailto:laksithaudugama@hotmail.com">laksithaudugama@hotmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Phone</span>
+          <span class="info-val">+94 783 871 676</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">LinkedIn</span>
+          <span class="info-val"><a href="https://linkedin.com/in/laksithaudugama-106a95167" target="_blank">View Profile →</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Education</span>
+          <span class="info-val">BSc ICT — Network &amp; Security</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Availability</span>
+          <span class="info-val" style="color:#1A7A3A; font-weight:600;">Open to Opportunities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-eyebrow">Core Competencies</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">🐧</div>
+        <div class="skill-card-title">Operating Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Ubuntu</span><span class="skill-tag">Red Hat 7/8</span>
+          <span class="skill-tag">CentOS</span><span class="skill-tag">Kali Linux</span>
+          <span class="skill-tag">Windows Server</span><span class="skill-tag">macOS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🗄️</div>
+        <div class="skill-card-title">Data Warehousing & ETL</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Greenplum</span><span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">ClickHouse</span><span class="skill-tag">Apache Airflow</span>
+          <span class="skill-tag">ETL Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📊</div>
+        <div class="skill-card-title">Databases & Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span><span class="skill-tag">MSSQL</span>
+          <span class="skill-tag">SQL</span><span class="skill-tag">Tableau Server</span>
+          <span class="skill-tag">SSRS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📡</div>
+        <div class="skill-card-title">Monitoring & Alerting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Zabbix</span><span class="skill-tag">Nagios</span>
+          <span class="skill-tag">Datadog</span><span class="skill-tag">GMC Inspire</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🔒</div>
+        <div class="skill-card-title">Email Security</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Proofpoint</span><span class="skill-tag">Barracuda</span>
+          <span class="skill-tag">G Suite</span><span class="skill-tag">Mailscanner</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">Automation & Scripting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span><span class="skill-tag">Bash</span>
+          <span class="skill-tag">Shell Scripting</span><span class="skill-tag">GMC Inspire</span>
+          <span class="skill-tag">Apache Airflow</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">☁️</div>
+        <div class="skill-card-title">Cloud & Virtualisation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span>
+          <span class="skill-tag">CloudWatch</span><span class="skill-tag">VMware vSphere</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🌐</div>
+        <div class="skill-card-title">Networking & Infrastructure</div>
+        <div class="skill-tags">
+          <span class="skill-tag">DNS</span><span class="skill-tag">Squid Proxy</span>
+          <span class="skill-tag">Routing & Switching</span><span class="skill-tag">Active Sync</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🛠️</div>
+        <div class="skill-card-title">Tools & Collaboration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Salesforce</span><span class="skill-tag">Jira</span>
+          <span class="skill-tag">TortoiseSVN</span><span class="skill-tag">HTML/CSS/JS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-eyebrow">Career History</div>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">Jun 2025 – Dec 2025</div>
+        <div class="exp-role">Application Support Engineer</div>
+        <div class="exp-company">IGT 1 Outsourcing Lanka (IFS / Billtrust) · Colombo 09</div>
+        <ul class="exp-bullets">
+          <li>Maintained and enhanced Python automation scripts to meet U.S. client requirements, reducing manual processing overhead.</li>
+          <li>Designed GMC Inspire (Quadient) templates to automate high-volume batch document generation and monitoring workflows.</li>
+          <li>Performed root cause analysis and resolution of production incidents, maintaining SLA adherence.</li>
+          <li>Managed support tickets via Salesforce, collaborating with QA, Business Analysts, and Project Management teams.</li>
+          <li>Wrote and optimised complex SQL queries for reporting and data validation; used Jira and TortoiseSVN.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">Oct 2023 – Jun 2025</div>
+        <div class="exp-role">System Support Engineer</div>
+        <div class="exp-company">The Altria Consulting · Colombo</div>
+        <ul class="exp-bullets">
+          <li>Managed and optimised ETL pipelines and data loading across Greenplum, Snowflake, and ClickHouse data warehouses.</li>
+          <li>Installed, configured, and administered Tableau Server; built SSRS reports for business intelligence stakeholders.</li>
+          <li>Administered Apache Airflow: designed, scheduled, and troubleshot data pipeline DAGs.</li>
+          <li>Managed Zabbix monitoring server — configured alerts and dashboards for proactive infrastructure health management.</li>
+          <li>Resolved Linux server incidents and wrote Bash automation scripts to reduce repetitive operational tasks.</li>
+          <li>Provided 24/7 rostered customer support and managed day-to-day operational tickets.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">Dec 2022 – Sep 2023</div>
+        <div class="exp-role">Trainee Associate Engineer</div>
+        <div class="exp-company">Lanka Communication Services (Lankacom) · Colombo 07</div>
+        <ul class="exp-bullets">
+          <li>Deployed and administered Zimbra email solution (single-server and multi-server) in Linux environments.</li>
+          <li>Implemented and managed email security gateways: Proofpoint, Barracuda, G Suite, and Mailscanner.</li>
+          <li>Deployed Nagios monitoring; configured and managed DNS for internal and external domain resolution.</li>
+          <li>Implemented and configured Squid proxy server for controlled internet access and traffic management.</li>
+          <li>Applied OS security patches on physical and virtual Linux servers; developed Bash backup automation scripts.</li>
+          <li>Provided end-user technical support, resolving incidents and ensuring service continuity.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-period">Aug 2022 – Dec 2022</div>
+        <div class="exp-role">IT Intern</div>
+        <div class="exp-company">Hayleys Fentons Limited · Colombo 10</div>
+        <ul class="exp-bullets">
+          <li>Supported Linux server administration, system monitoring, and Barracuda email security operations.</li>
+          <li>Assisted with VMware vSphere administration and routing &amp; switching configuration.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-eyebrow">What I've Built</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🔄</div>
+        <div class="project-name">ETL Pipeline Automation</div>
+        <div class="project-desc">Designed and managed automated ETL pipelines across Greenplum, Snowflake, and ClickHouse using Apache Airflow DAGs — reducing manual data loading effort and improving pipeline reliability.</div>
+        <div class="project-tags">
+          <span class="project-tag">Apache Airflow</span><span class="project-tag">Greenplum</span>
+          <span class="project-tag">Snowflake</span><span class="project-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📨</div>
+        <div class="project-name">High-Volume Batch Processing</div>
+        <div class="project-desc">Implemented GMC Inspire (Quadient) automation for high-volume document batch processing — including design, monitoring, root cause analysis, and issue resolution for U.S. enterprise clients.</div>
+        <div class="project-tags">
+          <span class="project-tag">GMC Inspire</span><span class="project-tag">Python</span>
+          <span class="project-tag">SQL</span><span class="project-tag">Salesforce</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📡</div>
+        <div class="project-name">Infrastructure Monitoring Setup</div>
+        <div class="project-desc">Deployed and administered Zabbix and Nagios monitoring servers — configured custom alerts, dashboards, and health checks for proactive incident detection across Linux server environments.</div>
+        <div class="project-tags">
+          <span class="project-tag">Zabbix</span><span class="project-tag">Nagios</span>
+          <span class="project-tag">Linux</span><span class="project-tag">Bash</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔒</div>
+        <div class="project-name">Email Security Implementation</div>
+        <div class="project-desc">End-to-end deployment and management of email security gateways including Proofpoint, Barracuda, and G Suite — from initial setup through ongoing administration and incident response.</div>
+        <div class="project-tags">
+          <span class="project-tag">Proofpoint</span><span class="project-tag">Barracuda</span>
+          <span class="project-tag">G Suite</span><span class="project-tag">Mailscanner</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🖥️</div>
+        <div class="project-name">Linux Shell Script Automation</div>
+        <div class="project-desc">Developed Bash scripts to automate server backups, routine administration tasks, OS patch management, and system health checks — reducing manual work and human error.</div>
+        <div class="project-tags">
+          <span class="project-tag">Bash</span><span class="project-tag">Linux</span>
+          <span class="project-tag">Ubuntu</span><span class="project-tag">Red Hat</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <div class="project-name">BI Reporting & Tableau Admin</div>
+        <div class="project-desc">Installed and administered Tableau Server for business intelligence delivery; developed SSRS reports and wrote advanced SQL queries to support data-driven decision-making for stakeholders.</div>
+        <div class="project-tags">
+          <span class="project-tag">Tableau Server</span><span class="project-tag">SSRS</span>
+          <span class="project-tag">SQL</span><span class="project-tag">MSSQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-eyebrow">Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <div class="cert-name">Introduction to IoT</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2021</div>
+          <span class="cert-badge active">Completed</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">Introduction to Cybersecurity</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2021</div>
+          <span class="cert-badge active">Completed</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🐧</div>
+        <div>
+          <div class="cert-name">NDG Linux Essentials</div>
+          <div class="cert-issuer">Linux Professional Institute (LPI)</div>
+          <span class="cert-badge active">Completed</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">AWS Cloud Practitioner (CLF-C02)</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <span class="cert-badge progress">In Progress</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">BSc ICT — Network &amp; Security Technologies</div>
+          <div class="cert-issuer">South Eastern University of Sri Lanka</div>
+          <span class="cert-badge active">Completed</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">Let's work together</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Open to new opportunities</h3>
+        <p>I'm actively looking for System Support, Infrastructure Support, and Application Support roles. Feel free to reach out — I'd love to connect.</p>
+        <div class="contact-links">
+          <a href="mailto:laksithaudugama@hotmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            laksithaudugama@hotmail.com
+          </a>
+          <a href="tel:+94783871676" class="contact-link">
+            <div class="contact-link-icon">📞</div>
+            +94 783 871 676
+          </a>
+          <a href="https://linkedin.com/in/laksithaudugama-106a95167" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            linkedin.com/in/laksithaudugama-106a95167
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">📍</div>
+            Maswela, Gampola, Sri Lanka
+          </a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="john@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="Job opportunity / Collaboration">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about the opportunity..."></textarea>
+          </div>
+          <p class="form-note">💡 To enable this form on GitHub Pages, connect it to <a href="https://formspree.io" target="_blank" style="color:var(--accent)">Formspree</a> (free).</p>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">L<span>.</span>Udugama</div>
+  <p>© 2025 Lakshitha Udugama · All rights reserved</p>
+  <p>Built with HTML, CSS &amp; care.</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('To activate this form, sign up at formspree.io and replace the form action with your endpoint.');
+}
+
+// Highlight active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+  });
+});
+</script>
+</body>
+</html>
